@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reciepe_app/core/constants/app_colors.dart';
-import 'package:reciepe_app/cubit/meal_details_cubit.dart';
-import 'package:reciepe_app/cubit/meal_details_state.dart';
+import 'package:reciepe_app/feature/meal_details/cubit/meal_details_cubit.dart';
+import 'package:reciepe_app/feature/meal_details/cubit/meal_details_state.dart';
 import 'package:reciepe_app/feature/home/data/model/meal_model.dart';
 import 'package:reciepe_app/feature/home/domain/entity/home_meal_entity.dart';
 import 'package:reciepe_app/feature/meal_details/widgets/meal_details_error_view.dart';

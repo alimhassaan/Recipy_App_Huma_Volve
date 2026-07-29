@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reciepe_app/core/network/api_service.dart';
-import 'package:reciepe_app/cubit/meal_details_cubit.dart';
+import 'package:reciepe_app/feature/meal_details/cubit/meal_details_cubit.dart';
 import 'package:reciepe_app/feature/home/presentation/view_model/recipe_home_cubit.dart';
 import 'package:reciepe_app/feature/home/presentation/view_model/recipe_home_state.dart';
 import 'package:reciepe_app/feature/meal_details/screens/meal_details_screen.dart';

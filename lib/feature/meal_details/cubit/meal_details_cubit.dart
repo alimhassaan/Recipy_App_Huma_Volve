@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reciepe_app/core/network/api_service.dart';
-import 'package:reciepe_app/cubit/meal_details_state.dart';
+import 'package:reciepe_app/feature/meal_details/cubit/meal_details_state.dart';
 import 'package:reciepe_app/feature/meal_details/services/api_service.dart';
 
 class MealDetailsCubit extends Cubit<MealDetailsState> {
