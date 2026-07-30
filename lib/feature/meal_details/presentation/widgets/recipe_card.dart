@@ -1,6 +1,8 @@
+// ignore_for_file: dead_code, dead_null_aware_expression
+
 import 'package:flutter/material.dart';
+import 'package:reciepe_app/core/constants/app_colors.dart';
 import 'package:reciepe_app/feature/home/domain/entity/home_meal_entity.dart';
-import '../../../core/constants/app_colors.dart';
 
 class RecipeCard extends StatelessWidget {
   final MealEntity meal;

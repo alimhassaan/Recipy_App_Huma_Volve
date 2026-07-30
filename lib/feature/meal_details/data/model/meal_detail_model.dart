@@ -1,8 +1,14 @@
-class Ingredient {
+import '../../domain/entity/meal_detail_entity.dart';
+
+class IngredientModel {
   final String name;
   final String measure;
 
-  Ingredient({required this.name, required this.measure});
+  IngredientModel({required this.name, required this.measure});
+
+  IngredientEntity toEntity() {
+    return IngredientEntity(name: name, measure: measure);
+  }
 }
 
 class MealDetailModel {
@@ -15,7 +21,7 @@ class MealDetailModel {
   String? strTags;
   String? strYoutube;
   String? strSource;
-  List<Ingredient> ingredients;
+  List<IngredientModel> ingredients;
 
   MealDetailModel({
     this.idMeal,
@@ -31,13 +37,13 @@ class MealDetailModel {
   });
 
   factory MealDetailModel.fromJson(Map<String, dynamic> json) {
-    List<Ingredient> extractedIngredients = [];
+    List<IngredientModel> extractedIngredients = [];
     for (int i = 1; i <= 20; i++) {
       final ingredient = json['strIngredient$i'];
       final measure = json['strMeasure$i'];
       if (ingredient != null && ingredient.toString().trim().isNotEmpty) {
         extractedIngredients.add(
-          Ingredient(
+          IngredientModel(
             name: ingredient.toString().trim(),
             measure: measure != null ? measure.toString().trim() : '',
           ),
@@ -56,6 +62,21 @@ class MealDetailModel {
       strYoutube: json['strYoutube'],
       strSource: json['strSource'],
       ingredients: extractedIngredients,
+    );
+  }
+
+  MealDetailEntity toEntity() {
+    return MealDetailEntity(
+      idMeal: idMeal ?? '',
+      strMeal: strMeal ?? '',
+      strCategory: strCategory ?? '',
+      strArea: strArea ?? '',
+      strInstructions: strInstructions ?? '',
+      strMealThumb: strMealThumb ?? '',
+      strTags: strTags ?? '',
+      strYoutube: strYoutube ?? '',
+      strSource: strSource ?? '',
+      ingredients: ingredients.map((e) => e.toEntity()).toList(),
     );
   }
 }

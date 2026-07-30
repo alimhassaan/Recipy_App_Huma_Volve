@@ -1,7 +1,7 @@
-import 'package:reciepe_app/core/network/api_service.dart';
-import 'package:reciepe_app/feature/home/data/data_sources/home_data_source.dart';
-import 'package:reciepe_app/feature/home/data/model/category_model.dart';
-import 'package:reciepe_app/feature/home/data/model/meal_model.dart';
+import '../../../../core/network/api_service.dart';
+import 'home_data_source.dart';
+import '../model/category_model.dart';
+import '../model/meal_model.dart';
 
 class HomeRemoteDataSourceImp implements HomeDataSource {
   ApiService apiService;

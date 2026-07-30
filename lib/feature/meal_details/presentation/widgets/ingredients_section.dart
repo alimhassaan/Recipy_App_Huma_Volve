@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:reciepe_app/core/constants/app_colors.dart';
-import 'package:reciepe_app/feature/meal_details/models/meal_detail_model.dart';
+import '../../../../core/constants/app_colors.dart';
+import '../../domain/entity/meal_detail_entity.dart';
 
 class IngredientsSection extends StatelessWidget {
-  final List<Ingredient> ingredients;
+  final List<IngredientEntity> ingredients;
 
   const IngredientsSection({super.key, required this.ingredients});
 

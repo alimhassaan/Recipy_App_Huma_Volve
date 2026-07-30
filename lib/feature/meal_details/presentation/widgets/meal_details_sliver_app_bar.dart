@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_colors.dart';
+import 'package:reciepe_app/core/constants/app_colors.dart';
+
 
 class MealDetailsSliverAppBar extends StatefulWidget {
   final String title;

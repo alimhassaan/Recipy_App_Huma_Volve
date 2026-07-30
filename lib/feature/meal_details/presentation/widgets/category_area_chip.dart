@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_colors.dart';
+import 'package:reciepe_app/core/constants/app_colors.dart';
 
 class CategoryAreaChip extends StatelessWidget {
   final IconData icon;

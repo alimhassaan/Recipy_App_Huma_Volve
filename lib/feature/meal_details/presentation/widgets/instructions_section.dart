@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reciepe_app/core/constants/app_colors.dart';
+import '../../../../core/constants/app_colors.dart';
 
 class InstructionsSection extends StatelessWidget {
   final String instructions;

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:reciepe_app/core/constants/app_colors.dart';
-import 'package:reciepe_app/core/network/api_service.dart';
-import 'package:reciepe_app/feature/home/data/data_sources/home_data_source.dart';
-import 'package:reciepe_app/feature/home/data/data_sources/home_remote_data_source_imp.dart';
-import 'package:reciepe_app/feature/home/data/repository/home_repository_imp.dart';
-import 'package:reciepe_app/feature/home/domain/repository/home_repository.dart';
-import 'package:reciepe_app/feature/home/domain/use_case/home_get_category_use_case.dart';
-import 'package:reciepe_app/feature/home/domain/use_case/home_get_meals_use_case.dart';
-import 'package:reciepe_app/feature/home/presentation/view_model/recipe_home_cubit.dart';
-import 'package:reciepe_app/feature/home/presentation/view_model/recipe_home_state.dart';
-import 'package:reciepe_app/feature/home/presentation/view/recipe_home_screen.dart';
+import 'core/constants/app_colors.dart';
+import 'core/network/api_service.dart';
+import 'feature/home/data/data_sources/home_data_source.dart';
+import 'feature/home/data/data_sources/home_remote_data_source_imp.dart';
+import 'feature/home/data/repository/home_repository_imp.dart';
+import 'feature/home/domain/repository/home_repository.dart';
+import 'feature/home/domain/use_case/home_get_category_use_case.dart';
+import 'feature/home/domain/use_case/home_get_meals_use_case.dart';
+import 'feature/home/presentation/view_model/recipe_home_cubit.dart';
+import 'feature/home/presentation/view_model/recipe_home_state.dart';
+import 'feature/home/presentation/view/recipe_home_screen.dart';
 
 void main() {
   runApp(const RecipeApp());

@@ -2,9 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:reciepe_app/core/error/error_handler.dart';
-import 'package:reciepe_app/core/error/failure.dart';
-import 'package:reciepe_app/feature/meal_details/models/meal_detail_model.dart';
+import 'package:reciepe_app/feature/meal_details/data/model/meal_detail_model.dart';
+import '../error/error_handler.dart';
+import '../error/failure.dart';
 
 class ApiService {
   final dio = Dio(

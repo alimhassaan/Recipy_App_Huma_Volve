@@ -1,4 +1,4 @@
-import 'package:reciepe_app/feature/home/domain/entity/home_meal_entity.dart';
+import '../../domain/entity/home_meal_entity.dart';
 
 class MealModel {
   String? idMeal;

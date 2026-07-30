@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:reciepe_app/core/error/error_handler.dart';
-import 'package:reciepe_app/core/error/failure.dart';
-import 'package:reciepe_app/feature/home/data/data_sources/home_data_source.dart';
-import 'package:reciepe_app/feature/home/domain/entity/home_category_entity.dart';
-import 'package:reciepe_app/feature/home/domain/entity/home_meal_entity.dart';
-import 'package:reciepe_app/feature/home/domain/repository/home_repository.dart';
+import '../../../../core/error/error_handler.dart';
+import '../../../../core/error/failure.dart';
+import '../data_sources/home_data_source.dart';
+import '../../domain/entity/home_category_entity.dart';
+import '../../domain/entity/home_meal_entity.dart';
+import '../../domain/repository/home_repository.dart';
 
 class HomeRepositoryImp implements HomeRepository {
   final HomeDataSource dataSource;
@@ -18,6 +18,8 @@ class HomeRepositoryImp implements HomeRepository {
       return right(categories);
     } on DioException catch (e) {
       return left(HandleError.handle(e));
+    } catch (e) {
+      return left(Failure(e.toString()));
     }
   }
 
@@ -31,6 +33,8 @@ class HomeRepositoryImp implements HomeRepository {
       return right(meals);
     } on DioException catch (e) {
       return left(HandleError.handle(e));
+    } catch (e) {
+      return left(Failure(e.toString()));
     }
   }
 }

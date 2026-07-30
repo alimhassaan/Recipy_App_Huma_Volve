@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:reciepe_app/feature/home/domain/entity/home_category_entity.dart';
-import 'package:reciepe_app/feature/home/domain/entity/home_meal_entity.dart';
-import 'package:reciepe_app/feature/home/domain/use_case/home_get_category_use_case.dart';
-import 'package:reciepe_app/feature/home/domain/use_case/home_get_meals_use_case.dart';
-import 'package:reciepe_app/feature/home/presentation/view_model/recipe_home_state.dart';
+import '../../domain/entity/home_category_entity.dart';
+import '../../domain/entity/home_meal_entity.dart';
+import '../../domain/use_case/home_get_category_use_case.dart';
+import '../../domain/use_case/home_get_meals_use_case.dart';
+import 'recipe_home_state.dart';
 
 class RecipeHomeCubit extends Cubit<RecipeHomeState> {
   // ApiService apiService;

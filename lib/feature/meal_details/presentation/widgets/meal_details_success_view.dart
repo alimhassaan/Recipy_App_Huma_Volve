@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:reciepe_app/core/constants/app_colors.dart';
-import 'package:reciepe_app/feature/home/domain/entity/home_meal_entity.dart';
-import 'package:reciepe_app/feature/meal_details/models/meal_detail_model.dart';
-import 'package:reciepe_app/feature/home/data/model/meal_model.dart';
-import 'package:reciepe_app/feature/meal_details/widgets/category_area_chip.dart';
-import 'package:reciepe_app/feature/meal_details/widgets/ingredients_section.dart';
-import 'package:reciepe_app/feature/meal_details/widgets/instructions_section.dart';
-import 'package:reciepe_app/feature/meal_details/widgets/meal_details_sliver_app_bar.dart';
+import '../../../../core/constants/app_colors.dart';
+import '../../../home/domain/entity/home_meal_entity.dart';
+import '../../domain/entity/meal_detail_entity.dart';
+import 'category_area_chip.dart';
+import 'ingredients_section.dart';
+import 'instructions_section.dart';
+import 'meal_details_sliver_app_bar.dart';
 
 class MealDetailsSuccessView extends StatelessWidget {
   final MealEntity initialMeal;
-  final MealDetailModel mealDetail;
+  final MealDetailEntity mealDetail;
 
   const MealDetailsSuccessView({
     super.key,
@@ -20,8 +19,12 @@ class MealDetailsSuccessView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final title = mealDetail.strMeal ?? initialMeal.strMeal ?? 'Meal Details';
-    final image = mealDetail.strMealThumb ?? initialMeal.strMealThumb ?? '';
+    final title = mealDetail.strMeal.isNotEmpty
+        ? mealDetail.strMeal
+        : (initialMeal.strMeal.isNotEmpty ? initialMeal.strMeal : 'Meal Details');
+    final image = mealDetail.strMealThumb.isNotEmpty
+        ? mealDetail.strMealThumb
+        : initialMeal.strMealThumb;
 
     return CustomScrollView(
       slivers: [
@@ -47,22 +50,18 @@ class MealDetailsSuccessView extends StatelessWidget {
                 // Category & Area Badges
                 Row(
                   children: [
-                    if (mealDetail.strCategory != null &&
-                        mealDetail.strCategory!.isNotEmpty)
+                    if (mealDetail.strCategory.isNotEmpty)
                       CategoryAreaChip(
                         icon: Icons.restaurant_menu_rounded,
-                        label: mealDetail.strCategory!,
+                        label: mealDetail.strCategory,
                       ),
-                    if (mealDetail.strCategory != null &&
-                        mealDetail.strCategory!.isNotEmpty &&
-                        mealDetail.strArea != null &&
-                        mealDetail.strArea!.isNotEmpty)
+                    if (mealDetail.strCategory.isNotEmpty &&
+                        mealDetail.strArea.isNotEmpty)
                       const SizedBox(width: 8),
-                    if (mealDetail.strArea != null &&
-                        mealDetail.strArea!.isNotEmpty)
+                    if (mealDetail.strArea.isNotEmpty)
                       CategoryAreaChip(
                         icon: Icons.public_rounded,
-                        label: mealDetail.strArea!,
+                        label: mealDetail.strArea,
                       ),
                   ],
                 ),
@@ -73,7 +72,7 @@ class MealDetailsSuccessView extends StatelessWidget {
 
                 // Instructions Section
                 InstructionsSection(
-                  instructions: mealDetail.strInstructions ?? '',
+                  instructions: mealDetail.strInstructions,
                 ),
               ],
             ),
